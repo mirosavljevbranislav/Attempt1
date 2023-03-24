@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodeFirt.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,6 +14,14 @@ namespace CodeFirt.Data
         
         [Range(5,10)]
         public int GradeName { get; set; }
+
+        public Student Student { get; set; }
+
+        public int StudentId { get; set; }
+
+        public Subject Subject { get; set; }
+
+        public int SubjectId { get; set; }
 
 
         //public ICollection<Student> Students { get; set; }

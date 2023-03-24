@@ -1,4 +1,5 @@
 using CodeFirt.Data;
+using CodeFirstPartTwo.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace CodeFirst.API
@@ -20,6 +21,14 @@ namespace CodeFirst.API
                 options
                 .UseSqlServer(_configuration.GetConnectionString("CollegeConnection"));
             });
+            services.AddDbContext<CarContext>(options =>
+            {
+                options
+                .UseSqlServer(_configuration.GetConnectionString("CarConnection"));
+            });
+
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
 
             services.AddControllers();
 
@@ -33,6 +42,8 @@ namespace CodeFirst.API
         {
             if (env.IsDevelopment())
             {
+                app.UseSwagger();
+                app.UseSwaggerUI();
                 app.UseDeveloperExceptionPage();
             }
 

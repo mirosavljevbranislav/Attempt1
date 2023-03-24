@@ -1,9 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CodeFirt.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeFirt.Data
 {
@@ -11,6 +7,8 @@ namespace CodeFirt.Data
     {
         public DbSet<Student> Students { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<Subject> Subject { get; set; }
+        public DbSet<SubjectStudent> SubjectStudent { get; set; }
 
         public CollegeContext(DbContextOptions options) : base(options)
         {
